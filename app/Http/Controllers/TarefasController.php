@@ -11,7 +11,11 @@ class TarefasController extends Controller
 
     public function list(){
         $list = DB::select('SELECT * FROM tarefas');
-        return view('tarefas.list',['list'=>$list]);
+        $card =  DB::select('SELECT id,nome FROM cards');
+        return view('tarefas.list',[
+            'list'=>$list,
+            'card'=>$card
+        ]);
     }
     
     public function add(){

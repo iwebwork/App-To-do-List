@@ -30,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('cards.cardOne', 'cardOne');
         Blade::component('navBars.navBarOne', 'navBarOne');
         Blade::component('sideBars.sideBarOne', 'sideBarOne');
+        Blade::component('cards.listaCardOne', 'listCardOne');
     }
 }
