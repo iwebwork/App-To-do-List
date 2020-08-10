@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row justify-content-md-center">
             @foreach ($card as $itens)
-                <div class="col-lg-3">
+                <div class="card-group">
                     <x-cardOne>
                         @slot('titulo')
                             {{$itens->nome}}
