@@ -6,6 +6,9 @@
             @foreach ($card as $itens)
                 <div class="card-group">
                     <x-cardOne>
+                        @slot('id')
+                            {{$itens->id}}
+                        @endslot
                         @slot('titulo')
                             {{$itens->nome}}
                         @endslot
@@ -14,6 +17,9 @@
                                 @foreach ($list as $lista)
                                     @if($lista->id_card === $itens->id)
                                         <x-listCardOne>
+                                            @slot('id')
+                                                {{$lista->id}}
+                                            @endslot
                                             @slot('titulo')
                                                 {{$lista->titulo}}
                                             @endslot

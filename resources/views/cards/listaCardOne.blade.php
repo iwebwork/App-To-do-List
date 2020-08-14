@@ -1,4 +1,5 @@
-<div class="list-group-item list-group-item-action flex-column align-items-start bg-white">
+<li class="list-group-item list-group-item-action flex-column align-items-start bg-white"
+draggable="true" ondragstart="drag(event)" id="drag{{$id}}">
     <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{$titulo}}</h5>
         <button type="button" class="btn btn-warning btn-md" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -10,4 +11,4 @@
             <a href="{{$rotaExcluir}}" class="card-link">Excluir</a>
         </div>
     </div>
-</div>
+</li>
