@@ -57,34 +57,9 @@
   <script src="/jquery/jquery.min.js"></script>
   <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-{{-- Drag and Drop --}}
-<script>
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    if(ev.target.className === "card-body"){ 
-      ev.target.appendChild(document.getElementById(data));
-    }else{
-      //local errado
-    }
-  }
-</script>
-
+  {{-- Meus Scripts --}}
+  <script src="/js/card.js"></script>
+  <script src="/js/menu.js"></script>
 
 </body>
 
