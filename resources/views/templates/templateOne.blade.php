@@ -39,8 +39,8 @@
 
         </x-navBarOne>
 
+        <br>
         @yield('body')
-       
 
         <div class="container-fluid">
             <footer>
