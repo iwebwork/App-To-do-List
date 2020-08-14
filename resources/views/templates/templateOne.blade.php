@@ -77,7 +77,11 @@
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    if(ev.target.className === "card-body"){ 
+      ev.target.appendChild(document.getElementById(data));
+    }else{
+      //local errado
+    }
   }
 </script>
 
