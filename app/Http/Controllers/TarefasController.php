@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class TarefasController extends Controller
 {
@@ -50,29 +51,15 @@ class TarefasController extends Controller
 
         
     }
-    public function editAction(Request $request,$id){
-        
-        if($request->filled('titulo')){
-            $data = DB::select('SELECT * FROM tarefas WHERE id = :id',
-                [
-                    'id' => $id
-                ]
-            );
-            // print_r($data[0]);
-            $titulo = $request->input('titulo');
-            if(count($data) > 0){
-                DB::update('UPDATE tarefas SET titulo = :titulo WHERE id = :id',
-                    [
-                        'id' => $id,
-                        'titulo' => $titulo
-                    ]
-                );
-            }
-        }else{
-            return redirect()->route('tarefas.edit',['id'=>$id])->with('aviso','Você não preencheu um titulo.');   
-        }
 
-        return redirect()->route('tarefas.list');
+    public function editAction($tarefa,$evento){
+        
+        
+        
+        return [
+            'tarefa' => $tarefa,
+            'evento' => $evento
+        ];
 
     }
     

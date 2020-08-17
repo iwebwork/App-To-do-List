@@ -1,4 +1,4 @@
-<li class="list-group-item list-group-item-action flex-column align-items-start bg-white"
+<li style="margin:6px;" class="list-group-item list-group-item-action flex-column align-items-start bg-white"
 draggable="true" ondragstart="drag(event)" id="drag{{$id}}">
     <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{$titulo}}</h5>

@@ -11,6 +11,12 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     if (ev.target.className === "card-body") {
         ev.target.appendChild(document.getElementById(data));
+
+        console.log("destino: " + ev.path[1].id);
+        console.log("Evento: " + data);
+    } else {
+        //console.log(ev.path);
+        //$(ev.drop.data).addClass("no-drop");
     }
 }
 
