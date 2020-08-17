@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
+use App\Tarefa;
+use Exception;
 
 class TarefasController extends Controller
 {
-    //
-
     public function list(){
         $list = DB::select('SELECT * FROM tarefas');
         $card =  DB::select('SELECT id,nome FROM cards');
@@ -52,15 +52,33 @@ class TarefasController extends Controller
         
     }
 
-    public function editAction($tarefa,$evento){
+    public function editAction(int $id,int $card){
         
-        
+        try{
+            if(!empty($id) && !empty($card)){
+
+                $tarefa = Tarefa::find($id);
+                $tarefa->id_card = $card;
+                $tarefa->save();
+
+                $status = 220;
+                $mensagem = 'Item alterado com sucesso';
+            }else{
+                $status = 404;
+                $mensagem = 'Os dados não foram enviados';
+            }
+    
+        }catch(Exception $e){
+            $status = 500;
+            $mensagem = $e->getMessage();
+        }
         
         return [
-            'tarefa' => $tarefa,
-            'evento' => $evento
+            'status' => $status,
+            'mensagem' => $mensagem,
         ];
 
+        
     }
     
     public function del($id){
