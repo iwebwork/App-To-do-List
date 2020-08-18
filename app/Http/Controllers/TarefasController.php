@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Card;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
@@ -11,8 +12,8 @@ use Exception;
 class TarefasController extends Controller
 {
     public function list(){
-        $list = DB::select('SELECT * FROM tarefas');
-        $card =  DB::select('SELECT id,nome FROM cards');
+        $list = Tarefa::all();
+        $card =  Card::all();
         return view('tarefas.list',[
             'list'=>$list,
             'card'=>$card
