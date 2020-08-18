@@ -12,8 +12,27 @@ function drop(ev) {
     if (ev.target.className === "card-body") {
         ev.target.appendChild(document.getElementById(data));
 
-        console.log("destino: " + ev.path[1].id);
-        console.log("Evento: " + data);
+        var id = data.replace("drag", "");
+        var card = ev.path[1].id.replace("div", "");
+
+        console.log("destino: " + card);
+        console.log("Evento: " + id);
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/tarefa/alterarTarefa/" + id + "/" + card + "/",
+            type: "patch",
+            dataType: "json",
+            success: function(reponse) {
+                console.log(reponse.mensagem);
+            },
+            error: function() {
+                alert("Deu algo errado");
+            },
+            complete: function() {
+                console.log("Feito");
+            }
+        });
+
     } else {
         //console.log(ev.path);
         //$(ev.drop.data).addClass("no-drop");
