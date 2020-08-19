@@ -46,11 +46,10 @@ class TarefasController extends Controller
         // print_r($data[0]);
         if(count($data)){
             return view('tarefas.edit',['data' => $data[0]]);
-        }else{
+        }else{ 
             return redirect()->route('tarefas.list');
         }
 
-        
     }
 
     public function editAction(int $id,int $card){
@@ -59,11 +58,17 @@ class TarefasController extends Controller
             if(!empty($id) && !empty($card)){
 
                 $tarefa = Tarefa::find($id);
-                $tarefa->id_card = $card;
-                $tarefa->save();
 
-                $status = 220;
-                $mensagem = 'Item alterado com sucesso';
+                if(Tarefa::where('id_card','=',$card)->where('id','=',$id)->count() > 0){
+                    $status = 404;
+                    $mensagem = 'Não pode cadastrar o registro no mesmo evento';    
+                }else{
+                    $tarefa->id_card = $card;
+                    $tarefa->save();
+
+                    $status = 220;
+                    $mensagem = 'Item alterado com sucesso';
+                }
             }else{
                 $status = 404;
                 $mensagem = 'Os dados não foram enviados';

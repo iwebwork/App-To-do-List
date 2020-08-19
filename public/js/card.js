@@ -9,43 +9,81 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
+    console.log(ev.target.className);
     if (ev.target.className === "card-body") {
-        ev.target.appendChild(document.getElementById(data));
 
         var id = data.replace("drag", "");
         var card = ev.path[1].id.replace("div", "");
 
         $.ajax({
-
             url: "http://127.0.0.1:8000/api/tarefa/alterarTarefa/" + id + "/" + card + "/",
             type: "patch",
             dataType: "json",
-            success: function(reponse) {
-                console.log(reponse.mensagem);
+            success: function(response) {
+                if (response.status == '220') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Sucesso',
+                        text: response.mensagem,
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    ev.target.appendChild(document.getElementById(data));
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Aviso',
+                        text: response.mensagem,
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: true,
+                        timer: 3000
+                    })
+                }
+
             },
-            error: function() {
-                alert("Deu algo errado");
-            },
-            complete: function() {
+            error: function(reponse) {
                 Swal.fire({
-                    icon: 'sucess',
-                    title: 'Sucesso',
-                    text: 'Item registrado com sucesso',
+                    icon: 'error',
+                    title: 'Aviso',
+                    text: reponse.mensagem,
                     showClass: {
                         popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
                         popup: 'animate__animated animate__fadeOutUp'
                     },
-                    showConfirmButton: false,
-                    timer: 1500
+                    showConfirmButton: true,
+                    timer: 3000
                 })
-            }
+            },
+            complete: function() {}
         });
 
     } else {
-        //console.log(ev.path);
-        //$(ev.drop.data).addClass("no-drop");
+        Swal.fire({
+            icon: 'error',
+            title: 'Aviso',
+            text: "So é permitido arrastar o evento para dentro do 'corpo' do card",
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            },
+            showConfirmButton: true,
+            timer: 3000
+        })
     }
 }
 
