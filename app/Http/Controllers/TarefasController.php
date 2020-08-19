@@ -11,6 +11,34 @@ use Exception;
 
 class TarefasController extends Controller
 {
+
+    public function selecionarEvento($idTarefa){
+
+        if(!empty($idTarefa)){
+
+            $tarefa = Tarefa::find($idTarefa);
+            $cards = Card::all();
+
+            $dados = [
+                'tarefa' => $tarefa,
+                'cards' => $cards
+            ];
+            $status = 200;
+            $mensagem = 'Os dados foram enviados';
+
+        }else{
+            $dados = null;
+            $status = 404;
+            $mensagem = 'Os dados não foram selecionados corretamente';
+        }
+        return [
+            'dados' => $dados,
+            'status' => $status,
+            'mensagem' => $mensagem
+        ];
+
+    }
+
     public function list(){
         $list = Tarefa::all();
         $card =  Card::all();
