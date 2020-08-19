@@ -15,10 +15,8 @@ function drop(ev) {
         var id = data.replace("drag", "");
         var card = ev.path[1].id.replace("div", "");
 
-        console.log("destino: " + card);
-        console.log("Evento: " + id);
-
         $.ajax({
+
             url: "http://127.0.0.1:8000/api/tarefa/alterarTarefa/" + id + "/" + card + "/",
             type: "patch",
             dataType: "json",
@@ -29,7 +27,19 @@ function drop(ev) {
                 alert("Deu algo errado");
             },
             complete: function() {
-                console.log("Feito");
+                Swal.fire({
+                    icon: 'sucess',
+                    title: 'Sucesso',
+                    text: 'Item registrado com sucesso',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    },
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         });
 
