@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <form method="POST"> 
+        <form id="modalEdit" method="POST"> 
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Editar Evento</h5>
@@ -12,13 +12,13 @@
                 <div class="modal-body">
                     {{-- <div class="input-group mb-3"> --}}
                         <label>Titulo: </label>
-                        <input class="form-control" id="tituloEvento" type="text" placeholder="Titulo">
+                        <input id="tituloEvento" class="form-control" id="tituloEvento" type="text" placeholder="Titulo">
                         <hr/>
                         <label>Card:  </label>
-                        <select class="form-control" class="custom-select" id="inputGroupSelect01">
+                        <select id="idCard" class="form-control" class="custom-select">
                             
                         </select>
-                        <input id="idEvento" type="hidden">
+                        <input id="idEvento" type="hidden" name="idEvento">
                     {{-- </div> --}}
                     
                 </div>
