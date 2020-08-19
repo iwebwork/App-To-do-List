@@ -9,7 +9,9 @@
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <form method="POST">
+            <input id="tituloEvento" type="text" placeholder="Titulo">
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

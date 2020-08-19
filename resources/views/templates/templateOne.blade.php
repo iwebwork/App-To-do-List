@@ -73,6 +73,7 @@
   {{-- Meus Scripts --}}
   <script src="/js/card.js"></script>
   <script src="/js/menu.js"></script>
+  <script src="/js/modalEdit.js"></script>
 
 </body>
 

@@ -5,10 +5,10 @@ draggable="true" ondragstart="drag(event)" id="drag{{$id}}">
         <button type="button" class="btn btn-warning btn-md" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-ellipsis-v" aria-hidden="false"></i>
         </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a href="{{$rotaEditar}}" class="card-link" data-toggle="modal" data-target="#modalEditar">Editar</a>
+        <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+            <button id="editar.{{$id}}" class="btn btn-light" data-toggle="modal" data-target="#modalEditar">Editar</button>
             <div class="dropdown-divider"></div>
-            <a href="{{$rotaExcluir}}" class="card-link">Excluir</a>
+            <button id="excluir.{{$id}}" class="btn btn-light">Excluir</button>
         </div>
     </div>
 </li>
