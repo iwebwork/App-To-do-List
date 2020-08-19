@@ -6,7 +6,7 @@ draggable="true" ondragstart="drag(event)" id="drag{{$id}}">
             <i class="fas fa-ellipsis-v" aria-hidden="false"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a href="{{$rotaEditar}}" class="card-link">Editar</a>
+            <a href="{{$rotaEditar}}" class="card-link" data-toggle="modal" data-target="#modalEditar">Editar</a>
             <div class="dropdown-divider"></div>
             <a href="{{$rotaExcluir}}" class="card-link">Excluir</a>
         </div>

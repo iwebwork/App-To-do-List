@@ -60,7 +60,9 @@
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
+    <x-modalEdit>
+      
+    </x-modalEdit>
   </div>
   <!-- /#wrapper -->
 
