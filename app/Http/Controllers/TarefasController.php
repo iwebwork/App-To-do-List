@@ -64,19 +64,36 @@ class TarefasController extends Controller
             return redirect()->route('tarefas.add')->with('aviso','Você não preencheu um titulo.');    
         }
     }
-    public function edit($id){
+    public function edit(Request $request){
+        $idEvento = $request->input('idEvento');
         
-        $data = DB::select('SELECT * FROM tarefas WHERE id = :id',
-            [
-                'id' => $id
-            ]
-        );
-        // print_r($data[0]);
-        if(count($data)){
-            return view('tarefas.edit',['data' => $data[0]]);
-        }else{ 
-            return redirect()->route('tarefas.list');
+        
+        if(!empty($idEvento)){
+            $tarefa = Tarefa::find($idEvento);
+
+            if (!empty($request->input('idCard'))){
+                $idCard = $request->input('idCard');
+                $tarefa->id_card = $idCard;
+            }
+            
+            if(!empty($request->input('tituloEvento'))){
+                $tituloEvento = $request->input('tituloEvento');
+                $tarefa->titulo = $tituloEvento;
+            }
+
+            $tarefa->save();
+
+            $status = 200;
+            $mensagem = 'Operação realizada com sucesso';
+        }else{
+            $status = 404;
+            $mensagem = 'Os dados não foram enviados';
         }
+
+        return [
+            'status' => $status,
+            'mensagem' => $mensagem
+        ];
 
     }
 
