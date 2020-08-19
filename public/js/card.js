@@ -32,9 +32,12 @@ function drop(ev) {
                             popup: 'animate__animated animate__fadeOutUp'
                         },
                         showConfirmButton: false,
-                        timer: 1500
-                    })
-                    ev.target.appendChild(document.getElementById(data));
+                        timer: 2000
+                    });
+                    setTimeout(function() {
+                        ev.target.appendChild(document.getElementById(data));
+                    }, 3000);
+
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -47,7 +50,7 @@ function drop(ev) {
                             popup: 'animate__animated animate__fadeOutUp'
                         },
                         showConfirmButton: true,
-                        timer: 3000
+                        timer: 2000
                     })
                 }
 
