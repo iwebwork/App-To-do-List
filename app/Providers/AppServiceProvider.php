@@ -31,7 +31,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('navBars.navBarOne', 'navBarOne');
         Blade::component('sideBars.sideBarOne', 'sideBarOne');
         Blade::component('cards.listaCardOne', 'listCardOne');
-        Blade::component('modals.modalEdit', 'modalEdit');
+        Blade::component('modals.modalEditEvent', 'modalEditEvent');
+        Blade::component('modals.modalInsertEvent', 'modalInsertEvent');
 
     }
 }

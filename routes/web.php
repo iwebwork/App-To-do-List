@@ -19,13 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function(){
     Route::get('/','TarefasController@list')->name('tarefas.list'); //Listagem de tarefas
-
-    Route::get('add','TarefasController@add')->name('tarefas.add'); //Tela de adição de nova tafera
-    Route::post('add','TarefasController@addAction'); // Ação de adição de nova tafera
-
-    Route::get('delete/{id}','TarefasController@del')->name('tarefas.del'); //Ação de delete da tarefa
-
-    Route::get('marcar/{id}','TarefasController@done')->name('tarefas.done'); //Marcar resolvido ou não
 });
 
 Route::fallback(function(){

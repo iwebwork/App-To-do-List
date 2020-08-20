@@ -25,5 +25,7 @@ Route::get('/tarefas', function (Request $request){
 Route::patch('/tarefa/alterarTarefa/{idTarefa}/{idStatus}', 'TarefasController@editAction');
 Route::get('/tarefa/selecionarTarefa/{idTarefa}', 'TarefasController@selecionarEvento');
 Route::post('/tarefa/editarTarefa/','TarefasController@edit')->name('tarefas.edit');
+Route::post('/tarefa/adicionarTarefa/','TarefasController@addAction')->name('tarefas.addAction');
+
 
 

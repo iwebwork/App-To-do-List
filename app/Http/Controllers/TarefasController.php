@@ -47,22 +47,29 @@ class TarefasController extends Controller
             'card'=>$card
         ]);
     }
-    
-    public function add(){
-        return view('tarefas.add');
-        
-    }
-    public function addAction(Request $request){
-       if($request->filled('titulo')){
-            $titulo = $request->input('titulo');
-            DB::insert('INSERT INTO tarefas (titulo) VALUES (:titulo)',[
-                'titulo'=> $titulo
-            ]);
 
-            return redirect()->route('tarefas.list');   
+    public function addAction(Request $request){
+
+       if(!empty($request->filled('titulo')) && !empty($request->filled('idCard'))){
+            $titulo = $request->input('titulo');
+            $idCard = $request->input('idCard');
+
+            $tarefa = new Tarefa();
+            $tarefa->titulo = $titulo;
+            $tarefa->id_card = $idCard;
+            $tarefa->save();
+
+            $status = 200;
+            $mensagem = 'Dados enviados';
         }else{
-            return redirect()->route('tarefas.add')->with('aviso','Você não preencheu um titulo.');    
+            $status = 404;
+            $mensagem = 'Dados não foram enviados';
         }
+
+        return [
+            'status' => $status,
+            'menssagem' => $mensagem
+        ];    
     }
     public function edit(Request $request){
         $idEvento = $request->input('idEvento');

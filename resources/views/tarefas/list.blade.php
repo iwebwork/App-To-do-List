@@ -23,15 +23,6 @@
                                             @slot('titulo')
                                                 {{$lista->titulo}}
                                             @endslot
-                                            @slot('routEvento')
-                                                {{route('tarefas.done',['id' => $lista->id])}}
-                                            @endslot
-                                            @slot('rotaEditar')
-                                                {{route('tarefas.edit',['id' => $lista->id])}}
-                                            @endslot
-                                            @slot('rotaExcluir')
-                                                {{route('tarefas.del',['id' => $lista->id])}}
-                                            @endslot
                                         </x-listCardOne>
                                     @endif
                                 @endforeach

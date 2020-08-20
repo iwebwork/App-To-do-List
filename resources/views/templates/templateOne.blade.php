@@ -60,9 +60,13 @@
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-    <x-modalEdit>
+    <x-modalEditEvent>
       
-    </x-modalEdit>
+    </x-modalEditEvent>
+
+    <x-modalInsertEvent>
+      
+    </x-modalInsertEvent>
   </div>
   <!-- /#wrapper -->
 
@@ -74,6 +78,7 @@
   <script src="/js/card.js"></script>
   <script src="/js/menu.js"></script>
   <script src="/js/modalEdit.js"></script>
+  <script src="/js/inserirEvent.js"></script>
 
 </body>
 
