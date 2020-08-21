@@ -21,7 +21,7 @@ $('[id^="editar."]').on('click', function() {
             Swal.fire({
                 icon: 'error',
                 title: 'Aviso',
-                text: e.menssagem,
+                text: e.mensagem,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
@@ -49,7 +49,7 @@ $("#modalEdit").on('submit', function(event) {
             Swal.fire({
                 icon: 'success',
                 title: 'Sucesso',
-                text: e.menssagem,
+                text: e.mensagem,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
@@ -65,7 +65,7 @@ $("#modalEdit").on('submit', function(event) {
             Swal.fire({
                 icon: 'error',
                 title: 'Aviso',
-                text: e.menssagem,
+                text: e.mensagem,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
