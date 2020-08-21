@@ -26,6 +26,7 @@ Route::patch('/tarefa/alterarTarefa/{idTarefa}/{idStatus}', 'TarefasController@e
 Route::get('/tarefa/selecionarTarefa/{idTarefa}', 'TarefasController@selecionarEvento');
 Route::post('/tarefa/editarTarefa/','TarefasController@edit')->name('tarefas.edit');
 Route::post('/tarefa/adicionarTarefa/','TarefasController@addAction')->name('tarefas.addAction');
+Route::delete('/tarefa/deletarTarefa/{idTarefa}', 'TarefasController@delAction');
 
 
 

@@ -68,7 +68,7 @@ class TarefasController extends Controller
 
         return [
             'status' => $status,
-            'menssagem' => $mensagem
+            'mensagem' => $mensagem
         ];    
     }
     public function edit(Request $request){
@@ -139,18 +139,24 @@ class TarefasController extends Controller
         
     }
     
-    public function del($id){
-        DB::delete('DELETE FROM tarefas WHERE id = :id',['id' => $id]);
-        return redirect()->route('tarefas.list');
+    public function delAction($id){
+        if(!empty($id)){
+
+            $tarefa = Tarefa::find($id);
+            $tarefa->delete();
+
+            $status = 200;
+            $mensagem = 'Dados deletados com sucesso';
+        }else{
+            $status = 404;
+            $mensagem = 'Dados não foram enviados';
+        }   
+
+        return [
+            'status' => $status,
+            'mensagem' => $mensagem
+        ];
     }
 
-    public function done($id){
-        DB::update('UPDATE tarefas SET resolvido = 1 - resolvido WHERE id = :id', 
-            [
-                'id' => $id
-            ]
-        );
-        
-        return redirect()->route('tarefas.list');
-    }
+
 }

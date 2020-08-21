@@ -79,6 +79,7 @@
   <script src="/js/menu.js"></script>
   <script src="/js/modalEdit.js"></script>
   <script src="/js/inserirEvent.js"></script>
+  <script src="/js/deleteEvent.js"></script>
 
 </body>
 

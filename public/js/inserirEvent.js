@@ -18,7 +18,7 @@ $('#inserirEvento').on('submit', function(event) {
             Swal.fire({
                 icon: 'success',
                 title: 'Sucesso',
-                text: e.menssagem,
+                text: e.mensagem,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
@@ -34,7 +34,7 @@ $('#inserirEvento').on('submit', function(event) {
             Swal.fire({
                 icon: 'error',
                 title: 'Aviso',
-                text: e.menssagem,
+                text: e.mensagem,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
