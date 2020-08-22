@@ -26,8 +26,12 @@ Route::patch('/tarefa/alterarTarefa/{idTarefa}/{idStatus}', 'TarefasController@e
 Route::get('/tarefa/selecionarTarefa/{idTarefa}', 'TarefasController@selecionarEvento');
 Route::post('/tarefa/editarTarefa/','TarefasController@edit')->name('tarefas.edit');
 Route::post('/tarefa/adicionarTarefa/','TarefasController@addAction')->name('tarefas.addAction');
-Route::post('/lista/adicionarLista/','CardController@addListAction')->name('Card.addListAction');
 Route::delete('/tarefa/deletarTarefa/{idTarefa}', 'TarefasController@delAction');
+
+Route::post('/lista/adicionarLista/','CardController@addListAction')->name('Card.addListAction');
+Route::delete('/lista/deletarLista/{idLista}', 'CardController@delAction');
+
+
 
 
 

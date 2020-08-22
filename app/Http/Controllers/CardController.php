@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Card;
+use App\Tarefa;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -27,6 +28,26 @@ class CardController extends Controller
         }
 
         return[
+            'status' => $status,
+            'mensagem' => $mensagem
+        ];
+    }
+
+    public function delAction($idCard){
+        if(!empty($idCard)){
+
+            $card = Card::find($idCard);
+            $tarefa = Tarefa::where('id_card', '=', $idCard)->delete();
+            $card->delete();
+
+            $status = 200;
+            $mensagem = 'Dados deletados com sucesso';
+        }else{
+            $status = 404;
+            $mensagem = 'Dados não foram enviados';
+        }   
+
+        return [
             'status' => $status,
             'mensagem' => $mensagem
         ];

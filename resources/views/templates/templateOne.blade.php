@@ -98,6 +98,8 @@
   <script src="/js/inserirEvent.js"></script>
   <script src="/js/deleteEvent.js"></script>
   <script src="/js/inserirLista.js"></script>
+  <script src="/js/deleteLista.js"></script>
+
 
 </body>
 

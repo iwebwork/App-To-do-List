@@ -8,7 +8,7 @@
             <button class="dropdown-item" type="button" id="inserir.{{$id}}" data-toggle="modal" data-target="#modalInserirEvento" >
                 Adicionar card
             </button>
-            <button class="dropdown-item" type="button" id="{{$id}}" data-toggle="modal" data-target="#modalInserirEvento" >
+            <button class="dropdown-item" type="button" id="deletar.{{$id}}" >
                 Remover Lista
             </button>
         </div>
