@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('cards.listaCardOne', 'listCardOne');
         Blade::component('modals.modalEditEvent', 'modalEditEvent');
         Blade::component('modals.modalInsertEvent', 'modalInsertEvent');
+        Blade::component('modals.modalInserirLista', 'modalInsertList');
 
     }
 }

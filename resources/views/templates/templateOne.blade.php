@@ -50,6 +50,19 @@
 
         </x-navBarOne>
 
+        <div class="container-fluid">
+          <div class="row d-flex justify-content-end">
+            <ul class="list-group" style="width: 18rem; margin:10px;">
+              <li class="list-group-item text-center">
+                  <button class="btn btn-light" id="inserirListaDeEvento" data-toggle="modal" data-target="#modalInserirLista">
+                      Adicionar Lista
+                  </button>
+              </li>
+          </ul>
+  
+          </div>
+        </div>
+
         <br>
         @yield('body')
 
@@ -67,6 +80,10 @@
     <x-modalInsertEvent>
       
     </x-modalInsertEvent>
+
+    <x-modalInsertList>
+      
+    </x-modalInsertList>
   </div>
   <!-- /#wrapper -->
 
@@ -80,6 +97,7 @@
   <script src="/js/modalEdit.js"></script>
   <script src="/js/inserirEvent.js"></script>
   <script src="/js/deleteEvent.js"></script>
+  <script src="/js/inserirLista.js"></script>
 
 </body>
 
