@@ -40,6 +40,7 @@ class TarefasController extends Controller
     }
 
     public function list(){
+
         $list = Tarefa::all();
         $card =  Card::all();
         return view('tarefas.list',[

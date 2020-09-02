@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function(){
     Route::get('/','TarefasController@list')->name('tarefas.list'); //Listagem de tarefas
+    Route::get('/login', 'Auth\LoginController@index')->name('templates.login');
+    Route::get('/cadastrar','Auth\RegisterController@index')->name('templates.register');
 });
 
 Route::fallback(function(){

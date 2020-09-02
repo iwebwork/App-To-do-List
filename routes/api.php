@@ -18,10 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/tarefas', function (Request $request){
-    return ['test' => true];
-});
-
 Route::patch('/tarefa/alterarTarefa/{idTarefa}/{idStatus}', 'TarefasController@editAction');
 Route::get('/tarefa/selecionarTarefa/{idTarefa}', 'TarefasController@selecionarEvento');
 Route::post('/tarefa/editarTarefa/','TarefasController@edit')->name('tarefas.edit');
@@ -31,6 +27,8 @@ Route::delete('/tarefa/deletarTarefa/{idTarefa}', 'TarefasController@delAction')
 Route::post('/lista/adicionarLista/','CardController@addListAction')->name('Card.addListAction');
 Route::delete('/lista/deletarLista/{idLista}', 'CardController@delAction');
 
+Route::post('/login/autheticate/','Auth\LoginController@authenticate');
+Route::post('/register/insert/','Auth\RegisterController@insert');
 
 
 
