@@ -38,9 +38,9 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <x-sideBarOne>
+    {{-- <x-sideBarOne>
             
-    </x-sideBarOne>
+    </x-sideBarOne> --}}
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
