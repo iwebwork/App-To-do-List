@@ -17,8 +17,8 @@
                 {{$name}}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Sair</a>
-                <div class="dropdown-divider"></div>
+                <button id="sair" class="btn dropdown-item">Sair</button>
+            <div class="dropdown-divider"></div>
             </div>
         </li>
     </ul>

@@ -1,6 +1,6 @@
 $('#login').on('submit', function(e) {
     e.preventDefault();
-    $("p").css("disable");
+    $("login").css("disable");
     $.ajax({
         url: "http://127.0.0.1:8000/api/login/autheticate/",
         type: "post",

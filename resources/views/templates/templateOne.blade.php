@@ -101,7 +101,7 @@
   <script src="/js/deleteEvent.js"></script>
   <script src="/js/inserirLista.js"></script>
   <script src="/js/deleteLista.js"></script>
-
+  <script src="/js/sair.js"></script>
 
 </body>
 

@@ -28,6 +28,8 @@ Route::post('/lista/adicionarLista/','CardController@addListAction')->name('Card
 Route::delete('/lista/deletarLista/{idLista}', 'CardController@delAction');
 
 Route::post('/login/autheticate/','Auth\LoginController@authenticate');
+Route::get('/login/sair/','Auth\LoginController@logout');
+
 Route::post('/register/insert/','Auth\RegisterController@insert');
 
 
