@@ -47,7 +47,9 @@
     <div id="page-content-wrapper">
 
         <x-navBarOne>
-
+          @slot('name')
+            {{$user}}
+          @endslot
         </x-navBarOne>
 
         <div class="container-fluid">

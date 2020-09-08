@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use App\Tarefa;
+use App\User;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class TarefasController extends Controller
 {
@@ -39,16 +41,23 @@ class TarefasController extends Controller
 
     }
 
-    public function list(){
+    public function list(Request $request){
+        $user = User::find($request->session()->get('id'));
 
-        $list = Tarefa::all();
-        $card =  Card::all();
-        return view('tarefas.list',[
-            'list'=>$list,
-            'card'=>$card
-        ]);
+        if($user){
+            $list = Tarefa::all();
+            $card =  Card::all();
+                    
+            return view('tarefas.list',[
+                'list'=>$list,
+                'card'=>$card,
+                'user'=>$user->name
+            ]);
+        }else{
+            return redirect('/login');
+        }
+
     }
-
     public function addAction(Request $request){
 
        if(!empty($request->filled('titulo')) && !empty($request->filled('idCard'))){
