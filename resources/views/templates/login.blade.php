@@ -9,6 +9,7 @@
   <meta name="author" content="">
 
   <title>App - To Do List</title>
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/1/1560.png">
 
   <!-- Bootstrap core CSS -->
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +31,9 @@
 
   {{-- SweetAlert --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  {{-- Meus Css --}}
+  <link href="css/login.css" rel="stylesheet">
 
 </head>
 

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
     {{-- <button class="btn btn-dark" id="menu-toggle">
         <i class="fas fa-bars"></i>
     </button> --}}

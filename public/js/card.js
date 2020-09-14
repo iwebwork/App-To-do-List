@@ -10,7 +10,7 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     // console.log(ev.target.className);
-    if (ev.target.className === "card-footer text-center") {
+    if (ev.target.id === "alterarEvent") {
 
         var id = data.replace("drag", "");
         var card = ev.path[1].id.replace("div", "");

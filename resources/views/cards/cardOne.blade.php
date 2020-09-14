@@ -1,4 +1,4 @@
-<div class="card bg-light" style="width: 18rem; margin:10px;" id="div{{$id}}" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="card bg-light cardOne" style="width: 18rem; margin:10px;" id="div{{$id}}" ondrop="drop(event)" ondragover="allowDrop(event)">
     <!-- Default dropright button -->
     <div class="dropright text-center">
         <button class="btn text-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,7 +18,7 @@
             {{$lista}}
         </ul>
     </div>
-    <div class="card-footer text-center">
+    <div class="card-footer text-center rodape" id="alterarEvent">
         Arraste aqui
     </div>
 </div> 

@@ -9,6 +9,7 @@
   <meta name="author" content="">
 
   <title>App - To Do List</title>
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/1/1560.png">
 
   <!-- Bootstrap core CSS -->
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +31,9 @@
 
   {{-- SweetAlert --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  {{-- Meus Css --}}
+  <link href="css/register.css" rel="stylesheet">
 
 </head>
 
@@ -55,6 +59,9 @@
                     </div>
                     <div class="form-group d-flex justify-content-center">
                         <input type="submit" class="btnSubmit" value="Cadastrar" />
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <a class="btnForgetPwd" href="/login">Voltar</a>
                     </div>
                 </form>
             </div>

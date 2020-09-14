@@ -16,7 +16,7 @@ $('#sair').on('click', function(e) {
                 hideClass: {
                     popup: 'animate__animated animate__fadeOutUp'
                 },
-                showConfirmButton: true,
+                showConfirmButton: false,
                 timer: 2000,
             });
             setTimeout(function() { window.location.replace("http://127.0.0.1:8000/"); }, 3000);

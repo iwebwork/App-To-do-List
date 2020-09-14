@@ -9,6 +9,7 @@
   <meta name="author" content="">
 
   <title>App - To Do List</title>
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/1/1560.png">
 
   <!-- Bootstrap core CSS -->
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +31,11 @@
 
   {{-- SweetAlert --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  {{-- Css Pessoais --}}
+  <link href="css/app.css" rel="stylesheet">
+  <link href="css/navbarOne.css" rel="stylesheet">
+  <link href="css/cardOne.css" rel="stylesheet">
 
 </head>
 
@@ -56,7 +62,7 @@
           <div class="row d-flex justify-content-end">
             <ul class="list-group" style="width: 18rem; margin:10px;">
               <li class="list-group-item text-center">
-                  <button class="btn btn-light" id="inserirListaDeEvento" data-toggle="modal" data-target="#modalInserirLista">
+                  <button class="btn btn-success" id="inserirListaDeEvento" data-toggle="modal" data-target="#modalInserirLista">
                       Adicionar Lista
                   </button>
               </li>
