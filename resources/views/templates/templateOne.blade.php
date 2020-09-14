@@ -70,7 +70,7 @@
 
         <div class="container-fluid">
             <footer>
-                rodapé
+                
             </footer> 
         </div>
     </div>

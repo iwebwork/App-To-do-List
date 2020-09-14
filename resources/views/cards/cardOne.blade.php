@@ -13,9 +13,12 @@
             </button>
         </div>
     </div>
-    <div class="card-body">
+    <div class="card-body inserir_{{$id}}" >
         <ul class="list-group list-group-flush">
             {{$lista}}
         </ul>
+    </div>
+    <div class="card-footer text-center">
+        Arraste aqui
     </div>
 </div> 

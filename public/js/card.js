@@ -9,8 +9,8 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    console.log(ev.target.className);
-    if (ev.target.className === "card-body") {
+    // console.log(ev.target.className);
+    if (ev.target.className === "card-footer text-center") {
 
         var id = data.replace("drag", "");
         var card = ev.path[1].id.replace("div", "");
@@ -35,7 +35,8 @@ function drop(ev) {
                         timer: 2000
                     });
                     setTimeout(function() {
-                        ev.target.appendChild(document.getElementById(data));
+                        // console.log(ev.target);
+                        setTimeout(function() { location.reload(); }, 2000);
                     }, 3000);
 
                 } else {
@@ -77,7 +78,7 @@ function drop(ev) {
         Swal.fire({
             icon: 'error',
             title: 'Aviso',
-            text: "So é permitido arrastar o evento para dentro do 'corpo' do card",
+            text: "Local incorreto",
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
