@@ -6,7 +6,7 @@
         </button>
         <div class="dropdown-menu">
             <button class="dropdown-item" type="button" id="inserir.{{$id}}" data-toggle="modal" data-target="#modalInserirEvento" >
-                Adicionar card
+                Adicionar evento
             </button>
             <button class="dropdown-item" type="button" id="deletar.{{$id}}" >
                 Remover Lista

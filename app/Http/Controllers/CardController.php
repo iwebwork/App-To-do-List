@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use App\Tarefa;
+use Exception;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -14,17 +15,23 @@ class CardController extends Controller
 
         $titulo = $request->input('nome');
 
-        if(!empty($titulo)){
+        try{
+            if(!empty($titulo)){
 
-            $lista = new Card();
-            $lista->nome = $titulo;
-            $lista->save();
-
-            $status = 200;
-            $mensagem = 'Os dados foram enviados com successo';
-        }else{
+                $lista = new Card();
+                $lista->nome = $titulo;
+                $lista->id_user = $request->session()->get('id');
+                $lista->save();
+    
+                $status = 200;
+                $mensagem = 'Os dados foram enviados com successo';
+            }else{
+                $status = 404;
+                $mensagem = 'Os dados não foram enviados';
+            }
+        }catch(Exception $e){
             $status = 404;
-            $mensage = 'Os dados não foram enviados';
+            $mensagem = $e->getMessage();
         }
 
         return[

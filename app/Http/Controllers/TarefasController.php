@@ -43,14 +43,19 @@ class TarefasController extends Controller
 
     public function list(Request $request){
         $user = User::find($request->session()->get('id'));
-
         if($user){
-            $list = Tarefa::all();
-            $card =  Card::all();
-                    
+            $tarefas = null;
+
+            $cards = Card::where('id_user','=',$user->id)->get()->toArray();
+            foreach($cards as $dados){
+                $tarefa = Tarefa::where('id_card',$dados['id'])->get()->toArray();
+                // print_r($dados['id']);
+                $tarefas[$dados['id']] = $tarefa;
+            }       
+
             return view('tarefas.list',[
-                'list'=>$list,
-                'card'=>$card,
+                'cards'=>$cards,
+                'tarefas' => $tarefas,
                 'user'=>$user->name
             ]);
         }else{
