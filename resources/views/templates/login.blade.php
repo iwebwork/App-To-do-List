@@ -34,8 +34,7 @@
 </head>
 
 <body>
-
-    <div class="container-fluid login-container">
+    <div class="container-fluid login-container" style="margin: 0; padding:0;">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 login-form-1">
                 <h3>Login</h3>
@@ -52,6 +51,9 @@
                     </div>
                     <div class="form-group d-flex justify-content-center">
                         <a href="#" class="btnForgetPwd">Esqueceu a senha?</a>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <a href="/cadastrar" class="btnForgetPwd">Quer criar sua conta?</a>
                     </div>
                 </form>
             </div>

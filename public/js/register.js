@@ -43,7 +43,7 @@ $('#register').on('submit', function(e) {
                 showConfirmButton: true,
                 timer: 2000,
             });
-            // setTimeout(function() { location.reload(); }, 3000);
+            setTimeout(function() { location.replace("/login") }, 3000);
         },
         error: function(e) {
             Swal.fire({
