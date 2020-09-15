@@ -32,7 +32,6 @@ Route::get('/login/sair/','Auth\LoginController@logout');
 
 Route::post('/register/insert/','Auth\RegisterController@insert');
 
-
-
-
+Route::post('/forgot/verify/','Auth\ForgotPasswordController@verifyUserExist');
+Route::post('/forgot/updateUser/{idUser}','Auth\ForgotPasswordController@updateUser');
 

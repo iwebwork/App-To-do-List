@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     {{-- <div class="input-group mb-3"> --}}
                         <label>Titulo: </label>
-                        <input id="tituloEvento" class="form-control" id="tituloEvento" type="text" placeholder="Titulo">
+                        <input class="form-control" id="tituloEvento" type="text" placeholder="Titulo">
                         <hr/>
                         <label>Card:  </label>
                         <select id="idCard" class="form-control" class="custom-select">

@@ -29,11 +29,12 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('erros.alert', 'alert');
         Blade::component('cards.cardOne', 'cardOne');
         Blade::component('navBars.navBarOne', 'navBarOne');
-        Blade::component('sideBars.sideBarOne', 'sideBarOne');
         Blade::component('cards.listaCardOne', 'listCardOne');
+        Blade::component('sideBars.sideBarOne', 'sideBarOne');
         Blade::component('modals.modalEditEvent', 'modalEditEvent');
         Blade::component('modals.modalInsertEvent', 'modalInsertEvent');
         Blade::component('modals.modalInserirLista', 'modalInsertList');
+        Blade::component('modals.modalForgotPassword', 'modalForgotPassword');
 
     }
 }

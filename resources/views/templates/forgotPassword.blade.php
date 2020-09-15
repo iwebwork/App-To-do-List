@@ -32,50 +32,43 @@
   {{-- SweetAlert --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-  {{-- Meus Css --}}
-  <link href="css/login.css" rel="stylesheet">  
-
 </head>
 
 <body>
-
-    <div class="container-fluid login-container">
+    <div class="container-fluid login-container" style="margin-top: 1%; padding:0;">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 login-form-1">
-                <h3 class="text-dark">Criar Usuario</h3>
-                <form id="register" method="POST">
+                <h3 class="text-dark">Esqueceu a senha?</h3>
+                <form method="POST" id="formForgotPassword">
                     @csrf
                     <div class="form-group">
-                        <input id="nome" type="text" class="form-control" placeholder="Digite seu nome..." value="" />
+                        <label>Nome:</label>
+                        <input id="name" type="text" class="form-control" placeholder="Seu nome..." value="" />
                     </div>
-                    <div class="form-group">
-                        <input id="email" type="email" class="form-control" placeholder="Email..." value="" />
-                    </div>
-                    <div class="form-group">
-                        <input id="password" type="password" class="form-control" placeholder="Senha..." value="" />
-                    </div>
-                    <div class="form-group">
-                        <input id="password_confirmation" type="password" class="form-control" placeholder="Confime sua senha..." value="" />
-                    </div>
+                    
                     <div class="form-group d-flex justify-content-center">
-                        <input type="submit" class="btnSubmit btn-success" value="Cadastrar" />
+                        <button id="btnForgotPassword" type="submit" class="btnSubmit btn-success" value="Verificar">Verificar</button>
                     </div>
                     <div class="form-group d-flex justify-content-center btn-success shadow p-3 mb-5 rounded">
                         <a class="btnForgetPwd" href="/login">Login</a>
                     </div>
+                    
                 </form>
             </div>
         </div>
     </div>
-    
+    <x-modalForgotPassword></x-modalForgotPassword>
 
+
+    
+    <link href="css/login.css" rel="stylesheet">  
 
     <!-- Bootstrap core JavaScript -->
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     {{-- Meus Scripts --}}
-    <script src="/js/register.js"></script>
+    <script src="/js/forgotPassword.js"></script>
 
 </body>
 

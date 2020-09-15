@@ -21,6 +21,7 @@ Route::prefix('/')->group(function(){
     Route::get('/','TarefasController@list')->name('tarefas.list'); //Listagem de tarefas
     Route::get('/login', 'Auth\LoginController@index')->name('templates.login');
     Route::get('/cadastrar','Auth\RegisterController@index')->name('templates.register');
+    Route::get('/forgot','Auth\forgotPasswordController@index')->name('templates.forgotPassword');
 });
 
 Route::fallback(function(){

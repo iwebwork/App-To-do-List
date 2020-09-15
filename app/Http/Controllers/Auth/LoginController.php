@@ -72,11 +72,14 @@ class LoginController extends Controller
     {
         $creds = $request->only(['email','password']);
         try{
-            if (Auth::attempt($creds)) {
-                $user = Auth::user();
+            $user = User::where('email',$creds['email'])->where('password',md5($creds['password']))->get();
+
+            if ($user->count() == 1) {
 
                 session_start();
-                $request->session()->put('id',$user->id);
+                foreach ($user as $value) {
+                    $request->session()->put('id',$value->id);
+                }
 
                 $status = 200;
                 $mensagem = 'Usuario logado com sucesso';
@@ -91,8 +94,9 @@ class LoginController extends Controller
         }
         return [
             'status' => $status,
-            'mensagem' => $mensagem
-        ];
+            'mensagem' => $mensagem,
+            'user' => $user
+        ];  
         
     }
 }

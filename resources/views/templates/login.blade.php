@@ -38,10 +38,10 @@
 </head>
 
 <body>
-    <div class="container-fluid login-container" style="margin: 0; padding:0;">
+    <div class="container-fluid login-container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 login-form-1">
-                <h3>Login</h3>
+                <h3 class="text-dark">Login</h3>
                 <form method="POST" id="login">
                     @csrf
                     <div class="form-group">
@@ -51,12 +51,12 @@
                         <input id="senha" type="password" class="form-control" placeholder="Senha..." value="" />
                     </div>
                     <div class="form-group d-flex justify-content-center">
-                        <input type="submit" class="btnSubmit" value="Login" />
+                        <input type="submit" class="btn btn-success btnSubmit" value="Login" />
                     </div>
-                    <div class="form-group d-flex justify-content-center">
-                        <a href="#" class="btnForgetPwd">Esqueceu a senha?</a>
+                    <div class="form-group d-flex justify-content-center btn-success shadow p-3 mb-5 rounded">
+                        <a href="/forgot" class="btnForgetPwd">Esqueceu a senha?</a>
                     </div>
-                    <div class="form-group d-flex justify-content-center">
+                    <div class="form-group d-flex justify-content-center btn-success shadow p-3 mb-5 rounded">
                         <a href="/cadastrar" class="btnForgetPwd">Quer criar sua conta?</a>
                     </div>
                 </form>

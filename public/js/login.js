@@ -12,7 +12,6 @@ $('#login').on('submit', function(e) {
         },
         success: function(e) {
             if (e.status == 404) {
-
                 Swal.fire({
                     icon: 'error',
                     title: 'Aviso',

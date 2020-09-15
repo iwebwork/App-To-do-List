@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+<nav class="navbar navbar-expand-lg border-bottom bg-info">
     {{-- <button class="btn btn-dark" id="menu-toggle">
         <i class="fas fa-bars"></i>
     </button> --}}
@@ -14,7 +14,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>--}}
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{$name}}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
